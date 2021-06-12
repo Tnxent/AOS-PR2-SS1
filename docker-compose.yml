@@ -1,0 +1,30 @@
+version: "3"
+services:
+  server:
+    image: zcj583/ss1
+    ports:
+      - "8080:8080"
+    networks:
+      - aos_ss1
+    depends_on:
+      - mongodb
+
+  mongodb:
+    image: mongo
+    restart: always
+    networks:
+      - aos_ss1
+    environment:
+      MONGO_INITDB_DATABASE: ss1
+    ports:
+      - 27017:27017
+    volumes:
+      - db_data:/var/lib/mongo
+
+
+
+networks:
+  aos_ss1:
+
+volumes:
+  db_data:
