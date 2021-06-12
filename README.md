@@ -2,7 +2,7 @@
  
 subsistema de gestión de clientes de un taller.
 
-# Instalación y uso:
+# Instalación y uso (Sólo Flask sin BD):
 
 1. Crear una imagen:
 ```
@@ -12,6 +12,13 @@ docker build -t ss1:0.1 .
 2. Ejecutar la imagen creando un contenedor:
 ```
 docker run -p 8080:8080 ss1:0.1
+```
+
+# Instalación y uso (Docker-compose con Flask+BD):
+
+1. Ejecutar el siguiente comando en la raíz para levantar todo el servicio:
+```
+docker-compose up
 ```
 
 # Guía de uso
